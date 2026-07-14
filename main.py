@@ -11,6 +11,17 @@ inscripciones = {
     "F003": [22990, 20]
 }
 
+def validar_opcion(msg, min, max):
+    while True:
+        try:
+            opcion = int(input(msg))
+            if opcion < min or opcion > max:
+                print("Valor fuera de rango, porfavor elija una opcion dentro del rango.")
+            else:
+                return opcion
+        except:
+            print("Error, porfavor ingrese solamente valores del tipo numerico.")
+
 def menu():
     while True:
         print("""
@@ -23,5 +34,6 @@ def menu():
 6. Salir
 =====================================
     """)
+        opcion = validar_opcion("Elija una opcion: ", 1, 6)
         
 menu()
