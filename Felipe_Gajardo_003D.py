@@ -96,7 +96,29 @@ def Actualizar_precio():
         else:
             return False
 
+def agregar_plan():
+    codigo = input("Ingrese el codigo de su nuevo plan: ")
+    nombre = input("Ingrese el nombre de su nuevo plan: ")
+    tipo = input("Ingrese el tipo de plan: ")
+    duracion = num_positivo("Ingrese la duracion en meses: ")
+    acceso_piscina = bool(input("Tendra acceso a la piscina: "))
+    horario = input("Ingrese el horario de su plan: ")
+    clases = bool(input("Incluira clases: "))
+    precio = num_positivo("Precio: ")
+    cupos = num_positivo("Cupos disponibles: ")
 
+    for k, v in inscripciones.keys():
+        if codigo == k:
+            print("No puede haber dos planes con el mismo codigo, intentelo nuevamente")
+            return
+        else:
+            None
+    
+    inscripciones[codigo] = [precio, cupos]
+
+    planes[codigo] = [nombre, tipo, duracion, acceso_piscina, clases, horario]
+
+    return
 
 
 
@@ -122,7 +144,12 @@ def menu():
         elif opcion == 3:
             print("Opcion sin funcionar")
         elif opcion == 4:
-            None
+            agregar_plan()
+        elif opcion == 5:
+            print("Opcion sin funcionar")
+        elif opcion == 6:
+            print("Programa Finalizado")
+            return
             
             
 
