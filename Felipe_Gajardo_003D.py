@@ -11,6 +11,17 @@ inscripciones = {
     "F003": [22990, 20]
 }
 
+def num_positivo(msg):
+    while True:
+        try:
+            opcion = int(input(msg))
+            if opcion >= 0:
+                return
+            else:
+                print("Debe ingresar un valor positivo, no puede ingresar 0 o numeros negativos.")
+        except:
+            print("Error, ingrese solamente valores de tipo numerico.")
+
 def validar_opcion(msg, min, max):
     while True:
         try:
@@ -57,7 +68,25 @@ def Cupos_por_tipo_de_plan():
     else:
         print("No se ha podido encontrar el tipo de plan que buscas, porfavor ingrese uno de los planes posiblemente registrados (Mensual, Trimestral o Anual)")
 
-                
+def Busqueda_Segun_precio():
+    minimo = num_positivo("Ingrese el minimo de su rango a buscar: ")
+    maximo = num_positivo("Ingrese el maximo de su rango a buscar: ")
+
+    lista_vacia = []
+
+    for k, v in inscripciones.items():
+        if v[0] <= maximo and k >= minimo and k[1] > 0:
+            lista_vacia.append(k, v)
+        else:
+            None
+    
+    print(lista_vacia)
+
+    lista_vacia.clear()
+
+
+
+
                 
 
 
@@ -79,6 +108,9 @@ def menu():
 
         if opcion == 1:
             Cupos_por_tipo_de_plan()
+        elif opcion == 3:
+            None
             
-        
+            
+
 menu()
