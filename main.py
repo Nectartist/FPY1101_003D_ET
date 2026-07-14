@@ -10,3 +10,18 @@ inscripciones = {
     "F002": [18990, 10],
     "F003": [22990, 20]
 }
+
+def menu():
+    while True:
+        print("""
+========== MENÚ PRINCIPAL ==========
+1. Cupos por tipo de plan
+2. Búsqueda de planes por rango de precio
+3. Actualizar precio de plan
+4. Agregar plan
+5. Eliminar plan
+6. Salir
+=====================================
+    """)
+        
+menu()
