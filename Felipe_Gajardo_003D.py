@@ -11,6 +11,9 @@ inscripciones = {
     "F003": [22990, 20]
 }
 
+def validacion_string(string: str):
+    return string.strip()
+
 def num_positivo(msg):
     while True:
         try:
@@ -84,10 +87,16 @@ def Busqueda_Segun_precio():
 
     lista_vacia.clear()
 
+def Actualizar_precio():
+    codigo = input("Ingrese el codigo del plan: ")
+    nuevo_precio = num_positivo("Ingrese el nuevo precio: ")
+    for k, v in inscripciones.items():
+        if codigo == k:
+            inscripciones[k][0] = nuevo_precio
+        else:
+            return False
 
 
-
-                
 
 
 
@@ -108,7 +117,11 @@ def menu():
 
         if opcion == 1:
             Cupos_por_tipo_de_plan()
+        elif opcion == 2:
+            print("Opcion sin funcionar")
         elif opcion == 3:
+            print("Opcion sin funcionar")
+        elif opcion == 4:
             None
             
             
